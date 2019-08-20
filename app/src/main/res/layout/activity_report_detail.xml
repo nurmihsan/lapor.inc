@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reportdetail.ReportDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:scrollbarThumbVertical="@null"
+        android:scrollbarThumbHorizontal="@null">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true">
+
+            <android.support.v4.view.ViewPager
+                android:layout_marginTop="16dp"
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view_pager"
+                android:layout_centerHorizontal="true"
+                android:padding="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_pager"
+                android:layout_marginTop="18dp"
+                android:text="1 hour ago"
+                android:textColor="#757575"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/middleParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_pager"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/middleParent"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_description"
+                    android:layout_toLeftOf="@id/tv_location"
+                    android:layout_toRightOf="@id/middleParent"
+                    android:src="@drawable/ic_location_on_black_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="Gedung Tokong Nanas"
+                    android:textColor="#757575"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_location"
+                android:layout_marginTop="20dp"
+                android:text="Sed vel ultrices tortor, sed mol estie risus. Fusce ut odio condimentum, accumsan nisl vitae, ornare purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed feugiat nisl."
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tv_label_jenis_pelanggaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description"
+                android:layout_marginTop="20dp"
+                android:text="Jenis Pelanggaran"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_jenis_pelanggaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_label_jenis_pelanggaran"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/jenis_pelanggaran_button"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Tertip Parkir"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_komentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_jenis_pelanggaran"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_comment_black_24dp"
+                android:drawablePadding="4dp"
+                android:text="Komentar 4"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_komentar"
+                android:paddingBottom="100dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_add_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_account_circle_grey_24dp" />
+
+        <EditText
+            android:id="@+id/et_add_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_profile_picture"
+            android:layout_marginLeft="12dp"
+            android:hint="Tambah komentar"
+            android:text=""
+            android:layout_marginRight="35dp"
+            android:background="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_send_blue_24dp"
+            android:layout_alignParentRight="true"
+            />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/et_add_comment"
+            android:layout_marginTop="20dp"
+            android:background="#D0D0D0" />
+
+        <TextView
+            android:id="@+id/tv_switch_anonim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Komentari sebagai anonim"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            android:layout_below="@id/line1"
+            android:layout_marginTop="12dp"
+            />
+
+        <Switch
+            android:id="@+id/switch_anonim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1"
+            android:layout_toRightOf="@id/tv_switch_anonim"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:checked="false" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

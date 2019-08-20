@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.DaftarActivity"
+    android:background="#FFFFFF"
+    android:fontFamily="@font/roboto">
+
+
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:background="@color/blue">
+        <ImageView
+            android:layout_width="155dp"
+            android:layout_height="67dp"
+            android:src="@drawable/logo"
+            android:layout_marginTop="43dp"
+            android:layout_marginLeft="37dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginLeft="35dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"/>
+
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:background="@drawable/edittext_border"
+            android:hint="Nama"
+            android:textColorHint="#aaa"
+            android:inputType="textPersonName"
+            android:textColor="#000"
+            android:paddingLeft="22dp"
+            android:paddingRight="20dp"
+            />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:textSize="14sp"
+            android:hint="Email"
+            android:textColorHint="#aaa"
+            android:inputType="textEmailAddress"
+            android:textColor="#000"
+            android:paddingLeft="22dp"
+            android:paddingRight="20dp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:textSize="14sp"
+            android:hint="Password"
+            android:textColorHint="#aaa"
+            android:inputType="textPassword"
+            android:textColor="#000"
+            android:paddingLeft="22dp"
+            android:paddingRight="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:text="Daftar"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:onClick="signUp"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"/>
+
+
+</RelativeLayout>
